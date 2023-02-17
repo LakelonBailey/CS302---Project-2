@@ -3,6 +3,7 @@
 
 List::List() {
     this->size = 0;
+    this->head = nullptr;
 }
 
 List::~List() {

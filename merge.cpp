@@ -54,6 +54,8 @@ Node *merge(Node *left, Node *right, bool numeric) {
     Node* newHead = nullptr;
     Node* current = nullptr;
     while (left != nullptr && right != nullptr) {
+
+        // Determine result
         int result = (
             numeric
             ? node_number_compare(left, right)
@@ -61,6 +63,8 @@ Node *merge(Node *left, Node *right, bool numeric) {
         );
 
         if (result) {
+
+            // Add to left list
             if (newHead == nullptr) {
                 newHead = left;
                 current = left;
@@ -69,7 +73,10 @@ Node *merge(Node *left, Node *right, bool numeric) {
                 current = left;
             }
             left = left->next;
-        } else {
+        }
+        else {
+
+            // Add to right list
             if (newHead == nullptr) {
                 newHead = right;
                 current = right;

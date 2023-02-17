@@ -1,6 +1,11 @@
 # Lakelon Bailey - Project 2: Sorting List-Based Strings and Numbers (02/16/2023)
+## Info
+- Github: LakelonBailey
+- Repository: https://github.com/LakelonBailey/CS302---Project-2
+- Time taken: 6 hours
+
 ## Benchmarks
-- Method: I developed a python script that develops the input files, compiles the program, and then uses the subprocess and time modules to time the C++ sorting algorithms through dymanically generated shell commands. For all of these sorting algorithms, I included the -n flag to require them all to sort numerically.
+- Method: I developed a python script that compiles the program, develops the input files, and then uses the subprocess and time modules to time the C++ sorting algorithms through dymanically generated shell commands. For all of these sorting algorithms, I included the -n flag to require them all to sort numerically.
 - Results:
     |   Mode   |   Size   | Elapsed Time  |
     | -------- | -------- | ------------- |
@@ -37,7 +42,7 @@
 1. **Question: Discuss the relative performance of each sorting method and try to explain the differences.**
     - **Answer:** The performance ranking of these sorting algorithms, in terms of speed alone, follows their top to bottom position in the above graph. STL and QSORT are very similar in speed, while MERGE is significantly slower and QUICK is by far the slowest. My theory is that the first two are faster because they are interacting with a lighter data structure: a basic array. Merge sort is likely faster than quick sort due to its better worst case scenario in terms of time complexity (quick sort pivot point could be bad).
 2. **Question: What do these results reveal about the relationship between theoretical complexity discussed in class and actual performance?**
-    - **Answer:** These results reveal that complexity is not the only factor that determines ultimate performance, as the size of data structures as well as potentially unlucky worst-case scenarios could arise throughout the more complicated algorithms.
+    - **Answer:** These results reveal that complexity is not the only factor that determines ultimate performance, as the size of data structures as well as potentially unlucky worst-case scenarios could arise throughout the more complicated algorithms. Along with this, the standard library functions have been highly optimized over time, so it would be expected that they would be faster than the basic algorithms.
 3. **Question: In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode**
     - **Answer:** In my opinion, merge sort is the best. It is a stable sorting algorithm that is both simple to read/understand as well as theoretically one of the fastest sorting algorithms. This algorithm can also be easily applied to many different types of linked items, therefore being less rigid in nature than STL/QSORT. In this context, however, there is a tradeoff of it being slower, but I do not see how this comparison would stand in a production sense in which the theoretical time complexities may be more prevalent.
 
