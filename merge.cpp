@@ -52,7 +52,7 @@ void split(Node *head, Node *&left, Node *&right) {
 
 Node *merge(Node *left, Node *right, bool numeric) {
     Node* newHead = nullptr;
-    Node* currNode = nullptr;
+    Node* current = nullptr;
     while (left != nullptr && right != nullptr) {
         int result = (
             numeric
@@ -63,27 +63,27 @@ Node *merge(Node *left, Node *right, bool numeric) {
         if (result) {
             if (newHead == nullptr) {
                 newHead = left;
-                currNode = left;
+                current = left;
             } else {
-                currNode->next = left;
-                currNode = left;
+                current->next = left;
+                current = left;
             }
             left = left->next;
         } else {
             if (newHead == nullptr) {
                 newHead = right;
-                currNode = right;
+                current = right;
             } else {
-                currNode->next = right;
-                currNode = right;
+                current->next = right;
+                current = right;
             }
             right = right->next;
         }
     }
     if (left != nullptr) {
-        currNode->next = left;
+        current->next = left;
     } else if (right != nullptr) {
-        currNode->next = right;
+        current->next = right;
     }
 
     return newHead;

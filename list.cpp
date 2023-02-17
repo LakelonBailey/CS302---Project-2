@@ -29,13 +29,13 @@ void List::push_front(const std::string &s) {
 }
 
 void dump_node(Node *n) {
-    Node * current = n;
-    while(current != nullptr) {
-        std::cout<<current->string<<'\n';
-        Node * next = current->next;
-        delete current;
-        current = next;
+    if (n == nullptr) {
+        return;
     }
+    std::cout<<n->string<<'\n';
+    Node* next = n->next;
+    delete n;
+    dump_node(next);
 }
 
 bool node_number_compare(const Node *a, const Node *b) {

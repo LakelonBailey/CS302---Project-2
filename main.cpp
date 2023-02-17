@@ -87,7 +87,6 @@ int main(int argc, char *argv[]) {
             break;
     }
 
-    // Dump data
     delete data;
     return 0;
 }
